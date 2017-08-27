@@ -6,8 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" />
     <title>WeatherApp</title>
 </head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-8 col-xs-offset-2 wrapper">
+            <div class="col-md-12 header">
+                <h1 id="cityName">Cruzeiro do Oeste, BR</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="wi wi-rain"></i>
+                    <p>Clear</p>
+                </div>
+                <div class="col-md-8">
+                    <h3 id="curentTemperature">23º</h3>
+                    <div class="switch" id="changeTempScale">
+                        <i id="tempCelcius" class="scale">C</i>
+                        <i id="tempFarenheit" class="scale">F</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JQuery Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Boostrap Javascript -->
