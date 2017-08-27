@@ -60,11 +60,42 @@
 }
 
 .switch .active {
+    position: relative;
     height: 60px;
     width: 60px;
     background-color: black;
     padding-top: 8px;
     border-radius: 30px;
+    /* animation: animate-left 600ms;
+    animation-timing-function: ease;  */
+    transform: all 600ms ease;
+}
+
+.animate-left {
+    animation: animate-left 600ms;
+    animation-timing-function: ease; 
+}
+
+.animate-right {
+    animation: animate-right 600ms;
+    animation-timing-function: ease; 
+}
+@keyframes animate-left {
+    from {
+        left: 120px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes animate-right {
+    from {
+        right: 120px;
+    }
+    to {
+        right: 0px;
+    }
 }
 /* ------------------------- */
 @media only screen and (max-width : 990px) {
