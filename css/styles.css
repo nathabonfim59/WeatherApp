@@ -1,0 +1,28 @@
+* {
+    font-family: 'Montserrat', ']Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+
+
+/* Background-diferenciation */
+.wrapper {
+    background-color: #2AF;
+}
+
+.header {
+    background-color: #8DA;
+}
+
+.weather-status {
+    background-color: #F1C;
+}
+
+.scale-wrapper {
+    background-color: #F16;
+}
+/* ------------------------- */
+
+.container-fluid {
+    text-align: center;
+}
