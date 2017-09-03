@@ -3,6 +3,10 @@
     color: #fff;
 }
 
+body {
+    background-color: red !important;
+}
+
 .container-fluid {
     text-align: center;
 }
@@ -10,21 +14,23 @@
 
 /* Background-diferenciation */
 .wrapper {
-    background-color: #2AF;
-    height: 500px;
+    margin-top: 30px;
+    height: 420px;
+    /* margin: 0 auto; */
 }
 
 .header {
-    background-color: #8DA;
-    height: 100px;
+    /* background-color: #8DA; */
+    height: 80px;
 }
 
+
 .weather-status {
-    background-color: #F1C;
+    /* background-color: #F1C; */
 }
 
 .weather-status i {
-    background-color: #3AA98A;
+    /* background-color: #3AA98A; */
     margin-bottom: 20px;
     height: 150px; 
     font-size: 140px;
@@ -35,7 +41,7 @@
 }
 
 .scale-wrapper {
-    background-color: #FF1065;
+    /* background-color: #FF1065; */
     padding-bottom: 20px;
 }
 
@@ -63,7 +69,7 @@
     position: relative;
     height: 60px;
     width: 60px;
-    background-color: black;
+    background-color: #00C35D;
     padding-top: 8px;
     border-radius: 30px;
     /* animation: animate-left 600ms;
@@ -80,6 +86,7 @@
     animation: animate-right 600ms;
     animation-timing-function: ease; 
 }
+
 @keyframes animate-left {
     from {
         left: 120px;
@@ -97,7 +104,33 @@
         right: 0px;
     }
 }
+
+/* Developer section */
+.developer {
+    padding-top: 15px;
+    font-weight: 400;
+}
+
+.developer a {
+    font-weight: 600;
+    color: #fff;
+}
+
+.developer a:hover {
+    color: #E6E6E6;
+    text-decoration: none;
+}
+
 /* ------------------------- */
+
+@media only screen and (min-width: 992px) {
+    .row {
+        position: relative;
+        padding-left: 120px !important;
+    }
+}
+
+
 @media only screen and (max-width : 990px) {
      .scale-wrapper {
          margin-left: 30px;
