@@ -57,6 +57,7 @@ body {
 .switch span {
     font-size: 30px;
     padding: 20px;
+    cursor: pointer;
 }
 
 .switch .active {
