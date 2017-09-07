@@ -1,5 +1,8 @@
 // var $ = require('jquery');
-
+var temperature = {
+    celcius: null,
+    fahrenheit: null
+}
 // Animate the click in change scale button
 function animateButton(buttonId) {
     // Add the aparence of enabled when clicked
@@ -18,12 +21,12 @@ function animateButton(buttonId) {
     }
     // Make the conversion between scales
     if (buttonId === "tempCelcius") {
-        clearActive("#tempFarenheit", "animate-right");
+        clearActive("#tempFahrenheit", "animate-right");
         addAnimation("#tempCelcius", "animate-left");
 
-    } else if (buttonId === "tempFarenheit") {
+    } else if (buttonId === "tempFahrenheit") {
         clearActive("#tempCelcius", "animate-left");
-        addAnimation("#tempFarenheit", "animate-right");
+        addAnimation("#tempFahrenheit", "animate-right");
     }
 }
 
@@ -70,7 +73,7 @@ function assignValues(weatherInfo) {
 
     $("#main").text(weatherInfo.main);
 
-    $("#curentTemperature").text(weatherInfo.temp);
+    $("#currentTemperature").text(weatherInfo.temp);
     
     assignIcon(weatherInfo.id);
 }
@@ -81,7 +84,6 @@ function assignValues(weatherInfo) {
 // - OpenWeatherMap -> https://openweathermap.org/weather-conditions
 function assignIcon(id) {
     var iconClass = null;
-    console.log(id);
     if (id >= 200 && id < 300) {
         switch(id) {
             case 200:
@@ -199,10 +201,32 @@ function assignIcon(id) {
     weatherIcon.className += " " + iconClass;
 }
 
+// Change the temp between C and F
+function changeScale(scaleId) {
+    function convertTempToF(temperatureC) {
+        return ((temperatureC * 1.8) + 32).toFixed(1);
+    }
+
+    if (!temperature.celcius) {
+        temperature.celcius = Number($("#currentTemperature").text()).toFixed(1);
+    } 
+
+    if (!temperature.fahrenheit) {
+        temperature.fahrenheit = convertTempToF(temperature.celcius);
+    }
+
+    if (scaleId === "tempFahrenheit") {
+        $("#currentTemperature").text(temperature.fahrenheit);
+    } else {
+        $("#currentTemperature").text(temperature.celcius);
+    }
+}
+
 $(document).ready(function() {
     $("#changeTempScale").click(function(event) {
         var requestedScale = event.target.id;
         animateButton(requestedScale);
+        changeScale(requestedScale);
     });
 
     getPosition();
