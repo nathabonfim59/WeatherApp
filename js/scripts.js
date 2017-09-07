@@ -1,4 +1,4 @@
-// var $ = require('jquery');
+// Constat to store the temp when change scale is activated
 var temperature = {
     celcius: null,
     fahrenheit: null
