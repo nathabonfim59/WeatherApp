@@ -81,6 +81,7 @@ function assignValues(weatherInfo) {
 // - OpenWeatherMap -> https://openweathermap.org/weather-conditions
 function assignIcon(id) {
     var iconClass = null;
+    console.log(id);
     if (id >= 200 && id < 300) {
         switch(id) {
             case 200:
@@ -123,12 +124,79 @@ function assignIcon(id) {
                 break;
         }
     } else if (id >= 500 && id < 600) {
-        iconClass = "wi-rain";
+        switch (id) {
+            case 500:
+            case 520:
+            case 521:
+            case 531:
+                iconClass = "wi-showers";
+                break;
+            default:
+                iconClass = "wi-thunderstorm";
+                break;
+        }
     } else if (id >= 600 && id < 700) {
         iconClass = "wi-snow";
-    } else if (id >= 700) {
-
+    } else if (id >= 700 && id < 800) {
+        switch (id) {
+            case 711:
+                iconClass = "wi-smoke";
+                break;
+            case 721:
+                iconClass =  "wi-day-haze";
+                break;
+            case 731:
+            case 751:
+                iconClass = "wi-sandstorm";
+                break;
+            case 741: 
+                iconClass = "wi-fog";
+                break;
+            case 761:
+                iconClass = "wi-dust";
+                break;
+            case 762:
+                iconClass = "wi-volcano";
+                break;
+            case 781:
+                iconClass = "wu-tornado";
+                break;
+            default: 
+                iconClass = "wi-cloud";
+                break;
+        }
+    } else if (id >= 800) {
+        switch (id) {
+            case 800:
+                iconClass = "wi-day-sunny";
+                break;
+            case 801:
+            case 802:
+            case 803:
+            case 804:
+                iconClass = "wi-cloud";
+                break;
+            case 900:
+            case 902:
+                iconClass = "wi-tornado";
+                break;
+            case 901:
+                iconClass = "wi-storm-showers"
+                break;
+            case 903:
+                iconClass = "wi-snowflake-cold"
+                break;
+            case 905:
+                iconClass = "wi-windy";
+                break;
+            default: 
+                iconClass = "wi-cloud";
+                break;
+        }
     }
+
+    var weatherIcon = document.getElementById('weatherIcon');
+    weatherIcon.className += " " + iconClass;
 }
 
 $(document).ready(function() {

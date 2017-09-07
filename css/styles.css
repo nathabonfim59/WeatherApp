@@ -20,6 +20,7 @@ body {
 
 .header {
     height: 80px;
+    margin-bottom: 20px;
 }
 
 
@@ -128,6 +129,14 @@ body {
         position: relative;
         padding-left: 120px !important;
     }
+    
+    .header {
+        margin-bottom: 50px !important;
+    }
+
+    .header h1 {
+        font-size: 45px;
+    }
 }
 
 
@@ -135,4 +144,8 @@ body {
      .scale-wrapper {
          margin-left: 30px;
      }   
+
+     .header {
+        margin-bottom: 50px;
+     }
 }
